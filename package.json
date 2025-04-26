@@ -1,0 +1,19 @@
+{
+  "name": "@upbudget/belvo-sdk",
+  "version": "1.0.0",
+  "description": "Belvo Widget SDK for integrating",
+  "main": "index.js",
+  "scripts": {
+   "build": "tsc && vite build"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Pedro Lima",
+    "email": "pedro.lima@upbudget.me"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.5.2"
+  },
+  "packageManager": "pnpm@9.9.0"
+}
