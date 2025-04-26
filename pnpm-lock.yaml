@@ -14,6 +14,9 @@ importers:
 
   packages/belvo-js:
     dependencies:
+      '@upbudget/belvo-js':
+        specifier: file:.yalc/@upbudget/belvo-js
+        version: belvo-js@file:packages/belvo-js/.yalc/@upbudget/belvo-js
       next:
         specifier: ^13.5.7 || ^14.2.25 || ^15.2.3
         version: 15.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -515,6 +518,9 @@ packages:
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  belvo-js@file:packages/belvo-js/.yalc/@upbudget/belvo-js:
+    resolution: {directory: packages/belvo-js/.yalc/@upbudget/belvo-js, type: directory}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -1368,6 +1374,8 @@ snapshots:
   any-promise@1.3.0: {}
 
   balanced-match@1.0.2: {}
+
+  belvo-js@file:packages/belvo-js/.yalc/@upbudget/belvo-js: {}
 
   brace-expansion@1.1.11:
     dependencies:
