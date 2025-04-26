@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Belvo Widget SDK for Hosted Widget for React, Next.js and Expo.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upbudgetdev/belvo-js.git"
+  },
+  "homepage": "https://github.com/upbudgetdev/belvo-js",
   "scripts": {
    "build": "tsc && vite build"
   },
