@@ -1,6 +1,8 @@
 # 🌟 @upbudget/belvo-js
 
-Welcome to the **Belvo Widget SDK**! This SDK is designed to make integrating with Belvo a breeze. Whether you're building a React app or a Next.js project, we've got you covered. Let's dive in! 🚀
+# Belvo Widget SDK
+
+A lightweight wrapper for seamlessly integrating Belvo's Hosted Widget (OFDA) into your applications. This SDK simplifies the implementation process for React, Next.js, and Expo projects, providing a straightforward way to connect with Belvo's financial data aggregation services.
 
 ## 📦 Installation
 
@@ -27,12 +29,16 @@ export default function Home() {
     }}>
       <>
         <div id="belvo" />
-        <BelvoConnectButton config={{
+        <BelvoConnectButton asChild config={{
           external_id: user?.id,
-          onSuccess: (link, institution) => {
+          onSuccess: (link: string, institution: string) => {
             console.log(link, institution);
           }
         }}>
+          <Button variant="outline">
+            <RiBankCardLine className="w-6 h-6"/>
+            Conectar
+          </Button>
         </BelvoConnectButton>
       </>
     </BelvoNextProvider>

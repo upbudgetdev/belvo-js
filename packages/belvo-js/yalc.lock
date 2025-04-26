@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@upbudget/belvo-js": {
+      "version": "1.0.0",
+      "signature": "f2ceb409384565bf0f7accccc9e50af5",
+      "file": true
+    }
+  }
+}

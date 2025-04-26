@@ -1,0 +1,46 @@
+{
+  "name": "@upbudget/belvo-js",
+  "version": "1.0.0",
+  "description": "React component for Belvo",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf ./dist",
+    "publish:local": "pnpm yalc push --replace --sig"
+  },
+  "keywords": [
+    "belvo",
+    "openfinance",
+    "belvo-sdk"
+  ],
+  "author": "Up Budget",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "tslib": "^2.8.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "yalc": "1.0.0-pre.53"
+  },
+  "exports": {
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "require": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./nextjs": {
+      "types": "./dist/nextjs/index.d.ts",
+      "require": "./dist/nextjs/index.js",
+      "default": "./dist/nextjs/index.js"
+    }
+  },
+  "peerDependencies": {
+    "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "@upbudget/belvo-js": "file:.yalc/@upbudget/belvo-js"
+  }
+}

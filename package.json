@@ -1,16 +1,13 @@
 {
   "name": "@upbudget/belvo-sdk",
   "version": "1.0.0",
-  "description": "Belvo Widget SDK for integrating",
+  "description": "Belvo Widget SDK for Hosted Widget for React, Next.js and Expo.",
   "main": "index.js",
   "scripts": {
    "build": "tsc && vite build"
   },
   "keywords": [],
-  "author": {
-    "name": "Pedro Lima",
-    "email": "pedro.lima@upbudget.me"
-  },
+  "author": "UpBudget",
   "license": "MIT",
   "devDependencies": {
     "turbo": "^2.5.2"
