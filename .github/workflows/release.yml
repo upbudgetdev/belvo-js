@@ -29,6 +29,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Bump version (patch)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          pnpm version patch --no-git-tag-version
+          NEW_VER=$(node -pe "require('./package.json').version")
+          git add package.json pnpm-lock.yaml
+          git commit -m "chore(release): v${NEW_VER}"
+          git tag "v${NEW_VER}"
+          git push origin HEAD:main --follow-tags
+
       - name: Build
         run: pnpm run build
 
@@ -36,6 +47,6 @@ jobs:
         run: pnpm config set git-checks false
 
       - name: Publish to npm
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
