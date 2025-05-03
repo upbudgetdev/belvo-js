@@ -27,7 +27,7 @@ jobs:
           version: 'latest'   # or pin to a version, e.g. '7.24.0'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm run build
