@@ -38,6 +38,9 @@
       "types":    "./dist/react/index.d.ts"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": ["dist"],
   "peerDependencies": {
     "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
