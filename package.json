@@ -2,7 +2,10 @@
   "name": "@upbudget/belvo-js",
   "version": "1.0.3",
   "description": "Belvo Widget SDK for Hosted Widget for React, Next.js and Expo.",
-  "main": "index.js",
+  "files": ["dist"],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/upbudgetdev/belvo-js.git"

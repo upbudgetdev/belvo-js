@@ -32,7 +32,10 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Disable pnpm git-checks
+        run: pnpm config set git-checks false
+
       - name: Publish to npm
-        run: pnpm publish --access public
+        run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsup",
+    "prepare": "pnpm run build",
     "dev": "tsup --watch",
     "clean": "rimraf ./dist",
     "publish:local": "pnpm yalc push --replace --sig"
