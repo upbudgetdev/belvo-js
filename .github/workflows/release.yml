@@ -1,34 +1,32 @@
-# .github/workflows/release.yml
 name: 📦 Release @upbudget/belvo-js
 
 on:
   push:
     tags:
-      - 'v*.*.*'         # e.g. v1.0.4
-  workflow_dispatch: {}   # optional: manually trigger from Actions tab
-
-permissions:
-  contents: read          # no need to push back
-  packages: write         # allow npm publish
+      - 'v*.*.*'
+  workflow_dispatch: {}
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0    # fetch tags
+          fetch-depth: 0
 
-      - name: Setup Node.js & pnpm
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          cache: 'pnpm'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 'latest'
@@ -38,10 +36,9 @@ jobs:
 
       - name: Build all packages
         run: pnpm run build
-        # in your root package.json, "build": "turbo run build"
 
       - name: Publish @upbudget/belvo-js
         working-directory: packages/belvo-js
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish  --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
