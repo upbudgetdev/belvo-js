@@ -2,7 +2,9 @@
   "name": "@upbudget/belvo-js",
   "version": "1.0.0",
   "description": "React component for Belvo",
-  "main": "index.js",
+  "main":   "dist/nextjs/index.cjs.js",
+  "module": "dist/nextjs/index.esm.js",
+  "types":  "dist/nextjs/index.d.ts",
   "scripts": {
     "build": "tsup",
     "prepare": "pnpm run build",
@@ -25,17 +27,18 @@
     "yalc": "1.0.0-pre.53"
   },
   "exports": {
-    "./react": {
-      "types": "./dist/react/index.d.ts",
-      "require": "./dist/react/index.js",
-      "default": "./dist/react/index.js"
+    ".": {
+      "require":  "./dist/nextjs/index.cjs.js",
+      "import":   "./dist/nextjs/index.esm.js",
+      "types":    "./dist/nextjs/index.d.ts"
     },
-    "./nextjs": {
-      "types": "./dist/nextjs/index.d.ts",
-      "require": "./dist/nextjs/index.js",
-      "default": "./dist/nextjs/index.js"
+    "./react": {
+      "require":  "./dist/react/index.cjs.js",
+      "import":   "./dist/react/index.esm.js",
+      "types":    "./dist/react/index.d.ts"
     }
   },
+  "files": ["dist"],
   "peerDependencies": {
     "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
     "react": "^18.3.1",
