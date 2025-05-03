@@ -1,41 +1,47 @@
 # .github/workflows/release.yml
-name: 📦 Release npm package (pnpm)
+name: 📦 Release @upbudget/belvo-js
 
 on:
   push:
     tags:
-      - 'v*.*.*'      # e.g. v1.2.3
-  workflow_dispatch: {}  # optional manual trigger
+      - 'v*.*.*'         # e.g. v1.0.4
+  workflow_dispatch: {}   # optional: manually trigger from Actions tab
+
+permissions:
+  contents: read          # no need to push back
+  packages: write         # allow npm publish
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0    # fetch tags
 
-      - name: Setup Node.js
+      - name: Setup Node.js & pnpm
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Setup pnpm
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 'latest'   # or pin to a version, e.g. '7.24.0'
+          version: 'latest'
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: Build all packages
         run: pnpm run build
+        # in your root package.json, "build": "turbo run build"
 
-      - name: Disable pnpm git-checks
-        run: pnpm config set git-checks false
-
-      - name: Publish to npm
-        run: pnpm publish --no-git-checks
+      - name: Publish @upbudget/belvo-js
+        working-directory: packages/belvo-js
+        run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

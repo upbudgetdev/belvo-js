@@ -2,9 +2,18 @@
   "name": "@upbudget/belvo-js",
   "version": "1.0.0",
   "description": "React component for Belvo",
-  "main":   "dist/nextjs/index.cjs.js",
-  "module": "dist/nextjs/index.esm.js",
-  "types":  "dist/nextjs/index.d.ts",
+  "exports": {
+    ".": {
+      "require":  "./dist/nextjs/index.cjs.js",
+      "import":   "./dist/nextjs/index.esm.js",
+      "types":    "./dist/nextjs/index.d.ts"
+    },
+    "./react": {
+      "require":  "./dist/react/index.cjs.js",
+      "import":   "./dist/react/index.esm.js",
+      "types":    "./dist/react/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsup",
     "prepare": "pnpm run build",
@@ -12,6 +21,10 @@
     "clean": "rimraf ./dist",
     "publish:local": "pnpm yalc push --replace --sig"
   },
+  "main":   "dist/nextjs/index.cjs.js",
+  "module": "dist/nextjs/index.esm.js",
+  "types":  "dist/nextjs/index.d.ts",
+  "files": ["dist"],
   "keywords": [
     "belvo",
     "openfinance",
@@ -26,22 +39,9 @@
     "typescript": "^5.8.3",
     "yalc": "1.0.0-pre.53"
   },
-  "exports": {
-    ".": {
-      "require":  "./dist/nextjs/index.cjs.js",
-      "import":   "./dist/nextjs/index.esm.js",
-      "types":    "./dist/nextjs/index.d.ts"
-    },
-    "./react": {
-      "require":  "./dist/react/index.cjs.js",
-      "import":   "./dist/react/index.esm.js",
-      "types":    "./dist/react/index.d.ts"
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
   "peerDependencies": {
     "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
     "react": "^18.3.1",
