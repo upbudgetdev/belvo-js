@@ -1,6 +1,6 @@
 {
   "name": "@upbudget/belvo-js",
-  "version": "1.0.1t",
+  "version": "1.0.1",
   "description": "Belvo Widget SDK for Hosted Widget for React, Next.js and Expo.",
   "repository": {
     "type": "git",
