@@ -1,6 +1,6 @@
 {
   "name": "@upbudget/belvo-js",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "React component for Belvo",
   "sideEffects": false,
   "exports": {
