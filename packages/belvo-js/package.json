@@ -1,12 +1,12 @@
 {
   "name": "@upbudget/belvo-js",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "React component for Belvo",
   "exports": {
     ".": {
-      "require": "./dist/nextjs/index.cjs.js",
-      "import": "./dist/nextjs/index.esm.js",
-      "types": "./dist/nextjs/index.d.ts"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
     },
     "./react": {
       "require": "./dist/react/index.cjs.js",
@@ -26,9 +26,9 @@
     "clean": "rimraf ./dist",
     "publish:local": "pnpm yalc push --replace --sig"
   },
-  "main": "dist/nextjs/index.cjs.js",
-  "module": "dist/nextjs/index.esm.js",
-  "types": "dist/nextjs/index.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
