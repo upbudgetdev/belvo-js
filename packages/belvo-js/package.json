@@ -1,23 +1,23 @@
 {
   "name": "@upbudget/belvo-js",
-  "version": "1.0.23",
+  "version": "1.0.25",
   "description": "React component for Belvo",
   "sideEffects": false,
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./react": {
       "require": "./dist/cjs/react/index.js",
       "import": "./dist/esm/react/index.js",
-      "types": "./dist/types/react/index.d.ts"
+      "types": "./dist/react/index.d.ts"
     },
     "./nextjs": {
       "require": "./dist/cjs/nextjs/index.js",
       "import": "./dist/esm/nextjs/index.js",
-      "types": "./dist/types/nextjs/index.d.ts"
+      "types": "./dist/nextjs/index.d.ts"
     }
   },
   "files": [
