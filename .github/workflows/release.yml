@@ -9,14 +9,14 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: useblacksmith/setup-node@v5
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
