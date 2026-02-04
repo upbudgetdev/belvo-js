@@ -4,11 +4,15 @@ export {
 	useBelvoWidget,
 } from './hooks';
 
-export { BelvoWidgetProvider } from './context/belvo-provider';
+export { BelvoWidgetProvider, useBelvo } from './context/belvo-provider';
 
 export { BelvoConnectButton } from './components/belvo-widget-button';
 
+export { BelvoEvents } from './types';
+
 export type {
+	AnalyticsAdapter,
+	BelvoEventName,
 	BelvoWidgetProps,
 	BelvoWidgetCallbacks,
 	GetAccessTokenFn,
