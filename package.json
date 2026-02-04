@@ -1,6 +1,6 @@
 {
-  "name": "@upbudget/belvo-js",
-  "version": "1.0.25",
+  "name": "belvo-js-monorepo",
+  "private": true,
   "description": "Belvo Widget SDK for Hosted Widget for React, Next.js and Expo.",
   "repository": {
     "type": "git",
@@ -8,14 +8,18 @@
   },
   "homepage": "https://github.com/upbudgetdev/belvo-js",
   "scripts": {
-    "build": "turbo build"
+    "build": "turbo build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
   },
   "keywords": [],
   "author": "UpBudget",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
     "turbo": "^2.5.2"
   },
-  "packageManager": "pnpm@9.9.0",
-  "private": false
+  "packageManager": "pnpm@9.9.0"
 }
