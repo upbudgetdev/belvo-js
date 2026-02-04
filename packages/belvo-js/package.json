@@ -5,19 +5,19 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/cjs/index.js",
+      "types": "./dist/index.d.ts",
       "import": "./dist/esm/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/cjs/index.js"
     },
     "./react": {
-      "require": "./dist/cjs/react/index.js",
+      "types": "./dist/react/index.d.ts",
       "import": "./dist/esm/react/index.js",
-      "types": "./dist/react/index.d.ts"
+      "require": "./dist/cjs/react/index.js"
     },
     "./nextjs": {
-      "require": "./dist/cjs/nextjs/index.js",
+      "types": "./dist/nextjs/index.d.ts",
       "import": "./dist/esm/nextjs/index.js",
-      "types": "./dist/nextjs/index.d.ts"
+      "require": "./dist/cjs/nextjs/index.js"
     }
   },
   "files": [
@@ -50,6 +50,7 @@
   "peerDependencies": {
     "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "swr": "^2.2.0"
   }
 }
