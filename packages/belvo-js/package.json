@@ -45,7 +45,8 @@
     "yalc": "1.0.0-pre.53"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "next": "^13.5.7 || ^14.2.25 || ^15.2.3",
