@@ -37,6 +37,11 @@
   ],
   "author": "Up Budget",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upbudgetdev/belvo-js",
+    "directory": "packages/belvo-js"
+  },
   "devDependencies": {
     "@types/react": "^19.1.2",
     "tslib": "^2.8.1",
